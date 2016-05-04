@@ -1,0 +1,367 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animalitos</title>
+<link href="css/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+<script src="js/acciones.js"></script>
+<script src="phonegap.js"></script>
+</head> 
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #DEDEDE;
+    display: flex;
+    min-height: 100vh;
+}
+
+#principal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom-style: solid;
+    border: 2px;
+}
+
+#cabeza{
+    position: relative;
+    width: 100%;
+    height: 9%;
+    float: left;
+    background-color: #333;
+    border-style: none;
+    overflow: hidden;
+}
+
+#texto {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+    border-style: none;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    top: 10%;
+}
+
+
+#paisa {
+    float: left;
+    width: 100%;
+    height: 86%;
+    border-style: none;
+    background-image: url(images/selva.jpg) ;
+}
+
+#paisa2 {
+    float: left;
+    width: 100%;
+    height: 86%;
+    border-style: none;
+    background-image: url(images/granja.jpg);
+}
+
+#paisa3 {
+    float: left;
+    width: 100%;
+    height: 86%;
+    border-style: none;
+    background-image: url(images/mundo.jpg);
+}
+
+.menealo {
+    border-style: none;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background: rgba(51,51,51,0.5);
+    top: 25%;
+    left: 25%;
+    padding: 5% 0% 5%;
+    overflow:visible;
+}
+
+.m1 {
+    border: 2px;
+    border-style: solid;
+    position: relative;
+    width: 80%;
+    height: auto;
+    text-align: center;
+    font-size: 42px;
+    padding: 1% 2% 2% 2%;
+    margin: 0% 0% 2% 0%;
+    left: 10%;
+    background: linear-gradient(#333, #BDBDBD);
+    overflow: hidden;
+}
+
+.btn {
+    position: relative;
+    float: right;
+    width: 9%;
+    height: 100%;
+    background-color: #4c4c4c;
+    border-style: solid;
+    border: 15px;
+    text-align: center;
+    color: #0084E2;
+    font-size: .8em;
+    border-color: #0084E2;
+    right: 8%;
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+}
+
+.ser {
+    border: 2px;
+    float: left;
+    position: relative;
+    border-style: solid;
+    width: 23.8%;
+    height: 42.5%;
+    margin: 2% 0% 0% 7%;
+}
+
+#xd1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/selva/oso.jpg);
+}
+
+#xd2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/selva/tigre.jpg);
+}
+
+#xd3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/selva/jirafa.jpg);
+}
+
+#xd4 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/selva/mono.jpg);
+}
+
+#xd5 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/selva/leon.jpg);
+}
+
+#xd6 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/selva/hiena.jpg);
+}
+
+#xd7 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/granja/gallina.jpg);
+}
+
+#xd8 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/granja/vaca.jpg);
+}
+
+#xd9 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/granja/caballo.jpg);
+}
+
+#xd10 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/granja/burro.jpg)
+}
+
+#xd11 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image:url(images/granja/toro.jpg);
+}
+
+#xd12 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-style: none;
+    background-image: url(images/granja/pato.jpg);
+}
+
+
+#hombre {
+    float: left;
+    position: relative;
+    border-style: none;
+    width: 100%;
+    height: 15%;
+    top: 85%;
+    background: rgba(51,51,51,0.5);
+    color: #fff;
+    font-size: 1em;
+    font-family: cursive;
+    text-align: center;
+    z-index: 2;
+}
+
+#pie {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 5%;
+    border-style: none;
+    background-color: #333;
+    font-size: 1em;
+    text-align: center;
+    color: #fff;
+}
+.tocada{
+	color:#333;
+	background:#333;
+	outline:solid 1px #FF0000;
+}
+</style>
+<body>
+
+
+
+
+
+
+
+<div data-role="page" id="page">
+    <div id="principal">
+          <div id="cabeza"><div id="texto">Animaleando</div>
+          </div>
+          
+          <div data-role="content" id="paisa3">
+            <div class="menealo">
+              <div class="m1"><a href="#page1" class="link">Selva</a></div>
+              <div class="m1"><a href="#page2" class="link">Granja</a></div>
+          </div>
+          </div>
+              
+              
+          <div data-role="footer" id="pie">C</div>
+      </div>
+</div>
+
+
+
+
+
+
+
+<div data-role="page" id="page1">
+      <div id="principal" >
+          <div id="cabeza"><div id="texto" data-add-back-btn="true">Animaleando en la Selva
+          <div class="btn"><a href="#page" class="link">Menú</a></div></div>
+          </div>
+          <div data-role="content" id="paisa">
+              <div id="oso" class="ser">
+                  <div id="xd1"><div id="hombre">Oso</div></div>
+              </div>
+              <div id="tigre" class="ser">
+                  <div id="xd2"><div id="hombre">Tigre</div></div>
+              </div>
+                            <div id="jirafa" class="ser">
+                  <div id="xd3"><div id="hombre">Jirafa</div></div>
+              </div>
+                            <div id="mono" class="ser">
+                  <div id="xd4"><div id="hombre">Mono</div></div>
+              </div>
+                            <div id="leon" class="ser">
+                  <div id="xd5"><div id="hombre">Leon</div></div>
+              </div>
+                            <div id="hiena" class="ser">
+                  <div id="xd6"><div id="hombre">Hiena</div></div>
+              </div>
+          </div>
+          <div data-role="footer" id="pie">Cristian Lucas Ramirez</div>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+<div data-role="page" id="page2" >
+      <div data-role="content" id="principal">
+          <div id="cabeza" data-add-back-btn="true"><div id="texto">Animalitos de Granja
+          <div class="btn"><a href="#page" class="link">Menú</a></div></div>
+          </div>
+          <div id="paisa2">
+              <div id="gallina" class="ser">
+                  <div id="xd7"><div id="hombre">Gallina</div></div>
+              </div>
+              <div id="vaca" class="ser">
+                  <div id="xd8"><div id="hombre">Vaca</div></div>
+              </div>
+                <div id="caballo" class="ser">
+                  <div id="xd9"><div id="hombre">Caballo</div></div>
+              </div>
+                <div id="burro" class="ser">
+                  <div id="xd10"><div id="hombre">Burro</div></div>
+              </div>
+                <div id="toro" class="ser">
+                  <div id="xd11"><div id="hombre">Toro</div></div>
+              </div>
+                <div id="pato" class="ser">
+                  <div id="xd12"><div id="hombre">Pato</div></div>
+              </div>
+          </div>
+          <div data-role="footer" id="pie">Cristian Lucas Ramirez</div>
+      </div>
+</div>
+
+
+</body>
+</html>
